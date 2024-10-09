@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pemesanan Khusus - Athena Florist</title>
+    <!-- Link ke Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Italianno&family=Love+Ya+Like+A+Sister&display=swap" rel="stylesheet">
+
+    <style>
+        /* Gaya Umum */
+        body {
+            font-family: 'Love Ya Like A Sister', sans-serif;
+            background-color: #fdfdfd;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background-color: #f8bbd0; /* Header Merah Muda */
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Italianno', cursive; /* Font Italianno untuk header */
+        }
+        header h1 {
+            margin: 0;
+            font-size: 48px;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-family: 'Love Ya Like A Sister', sans-serif;
+        }
+
+        /* Pemesanan Khusus Section */
+        .custom-order-section {
+            padding: 50px;
+            background-color: white;
+            text-align: center;
+        }
+        .custom-order-section h2 {
+            margin-bottom: 30px;
+            color: #e91e63; /* Judul Merah Muda */
+            font-family: 'Love Ya Like A Sister', sans-serif;
+        }
+
+        /* Formulir Pemesanan */
+        .order-form {
+            max-width: 600px;
+            margin: 10px auto;
+            padding: 30px; /* Padding lebih besar untuk spasi yang lebih baik */
+            background-color: #f8bbd0; /* Latar Belakang Formulir Merah Muda */
+            border-radius: 10px;
+            color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Tambahkan bayangan untuk efek kedalaman */
+        }
+        .order-form label {
+            display: block;
+            margin-bottom: 5px; /* Mengurangi margin untuk label */
+            font-size: 16px;
+            font-family: 'Love Ya Like A Sister', sans-serif;
+        }
+        .order-form input, .order-form select, .order-form textarea {
+            width: 100%;
+            padding: 12px; /* Padding yang lebih besar untuk elemen input */
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #e91e63; /* Border yang lebih jelas */
+            font-family: 'Love Ya Like A Sister', sans-serif; /* Font untuk isi formulir */
+            font-size: 14px; /* Ukuran font lebih kecil untuk isi formulir */
+        }
+        .order-form button {
+            background-color: white;
+            color: #e91e63; /* Warna tombol merah muda */
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Love Ya Like A Sister', sans-serif;
+            font-size: 16px;
+            transition: background-color 0.3s; /* Efek transisi saat hover */
+        }
+        .order-form button:hover {
+            background-color: #e91e63; /* Ganti warna tombol saat hover */
+            color: white; /* Ubah warna teks saat hover */
+        }
+
+        /* Feedback */
+        .feedback {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #4caf50;
+            display: none; /* Awalnya tidak ditampilkan */
+        }
+
+        /* Footer */
+        footer {
+            background-color: #f8bbd0;
+            color: white;
+            padding: 20px;
+            text-align: left;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-left {
+            flex: 1;
+        }
+
+        .footer-left h2 {
+            margin: 0;
+            font-family: 'Italianno', cursive;
+            font-size: 32px;
+        }
+
+        .footer-left p {
+            margin: 5px 0;
+            font-size: 16px;
+        }
+
+        .footer-right {
+            flex: 1;
+            text-align: right;
+        }
+
+        .footer-right h3 {
+            margin: 0;
+            font-size: 20px;
+        }
+
+        .footer-right p {
+            margin: 5px 0;
+            font-size: 16px;
+        }
+
+        .social-media {
+            margin-top: 10px;
+        }
+
+        .social-media a {
+            margin-left: 10px;
+        }
+
+        .social-media img {
+            width: 24px;
+            height: 24px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+    <h1>Athena Florist</h1>
+    <nav>
+        <ul>
+            <li><a href="index.php">Beranda</a></li>
+            <li><a href="produk.html">Produk</a></li>
+            <li><a href="custom_order.html">Pemesanan</a></li>
+            <li><a href="tentangkami.html">Tentang Kami</a></li>
+            <li><a href="kontak.html">Kontak</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Pemesanan Khusus Section -->
+<section class="custom-order-section">
+    <h2>Pemesanan Khusus</h2>
+    <p>Silakan isi formulir di bawah ini untuk melakukan pemesanan khusus.</p>
+
+    <!-- Formulir Pemesanan -->
+    <form action="submit.php" method="post" class="order-form" id="customOrderForm">
+        <label for="name">Nama Anda:</label>
+        <input type="text" id="name" name="username" required>
+
+        <label for="email">Email Anda:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Nomor Telepon:</label>
+        <input type="tel" id="phone" name="telepon" required pattern="[0-9]{10,13}">
+
+        <label for="occasion">Untuk Acara:</label>
+        <select id="occasion" name="acara">
+            <option value="wedding">Pernikahan</option>
+            <option value="birthday">Ulang Tahun</option>
+            <option value="special_event">Acara Khusus</option>
+            <option value="just_because">Lain - Lain</option>
+        </select>
+
+        <label for="message">Pesan Tambahan:</label>
+        <textarea id="message" name="pesan" rows="4" placeholder="Tuliskan pesan tambahan jika ada..."></textarea>
+
+        <button type="submit" name="register" >Kirim Pemesanan</button>
+    </form>
+
+    <!-- Feedback setelah pengiriman -->
+    <div class="feedback" id="feedbackMessage">
+        Terima kasih! Pemesanan khusus Anda telah berhasil dikirim.
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-container">
+        <div class="footer-left">
+            <h2>Athena Florist</h2>
+            <p>Alamat: Jl. Bunga No. 123, Jakarta, Indonesia</p>
+        </div>
+        <div class="footer-right">
+            <h3>Kontak Kami</h3>
+            <p>Email: info@athenaflorist.com</p>
+            <p>Telepon: +62 812-3456-7890</p>
+            <div class="social-media">
+                <a href="#" aria-label="Facebook"><img src="gambar/facebook logo.jpg" alt="Facebook" /></a>
+                <a href="#" aria-label="Instagram"><img src="gambar/instagram logo.png" alt="Instagram" /></a>
+                <a href="#" aria-label="Twitter"><img src="gambar/twitter logo.png" alt="Twitter" /></a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- JavaScript untuk validasi dan pengiriman formulir -->
+<script>
+    document.getElementById('customOrderForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Mencegah pengiriman formulir secara langsung
+
+        // Mengambil nilai dari formulir
+        var name = document.getElementById('name').value;
+        var email = document.getElementById('email').value;
+        var phone = document.getElementById('phone').value;
+        var occasion = document.getElementById('occasion').value;
+        var message = document.getElementById('message').value;
+
+        // Simulasi pengiriman data ke toko florist
+        console.log('Mengirim pesanan khusus...');
+        console.log('Nama:', name);
+        console.log('Email:', email);
+        console.log('Telepon:', phone);
+        console.log('Acara:', occasion);
+        console.log('Pesan Tambahan:', message);
+
+        // Menampilkan feedback kepada pengguna
+        var feedback = document.getElementById('feedbackMessage');
+        feedback.style.display = 'block';
+
+        // Mengosongkan formulir setelah pengiriman
+        document.getElementById('customOrderForm').reset();
+
+        // Menyembunyikan pesan feedback setelah 10 detik
+        setTimeout(function() {
+            feedback.style.display = 'none';
+        }, 10000); // 10000 milidetik = 10 detik
+    });
+
+    // Menyembunyikan pesan feedback saat halaman di-refresh
+    window.addEventListener('load', function() {
+        document.getElementById('feedbackMessage').style.display = 'none';
+    });
+</script>
+
+</body>
+</html>

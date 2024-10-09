@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produk - Athena Florist</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Italianno&family=Love+Ya+Like+A+Sister&display=swap" rel="stylesheet">
+
+    <style>
+        /* Gaya Umum */
+        body {
+            font-family: 'Love Ya Like A Sister', sans-serif;
+            background-color: #fdfdfd;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background-color: #f8bbd0;
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Italianno', cursive;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 48px;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-family: 'Love Ya Like A Sister', sans-serif;
+        }
+
+        /* Produk Section */
+        .product-section {
+            padding: 50px;
+            background-color: #f4f4f4;
+        }
+        .product-section h2 {
+            font-size: 45px;
+            text-align: center;
+            margin-bottom: 50px;
+            color: #e91e63;
+            font-family: 'Love Ya Like A Sister', sans-serif;
+        }
+        .product-section h3 {
+            font-size: 30px;
+            text-align: left;
+            margin-bottom: 30px;
+            color: #e91e63;
+            font-family: 'Love Ya Like A Sister', sans-serif;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .product-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.2s;
+        }
+        .product-card:hover {
+            transform: scale(1.05);
+        }
+        .product-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .product-card h3 {
+            font-size: 18px;
+            margin: 10px 0;
+            color: black;
+        }
+        .product-card p {
+            font-size: 16px;
+            color: black;
+        }
+        .product-card .price {
+            font-size: 18px;
+            color: #e91e63;
+        }
+        .product-card .details {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #f8bbd0;
+            color: white;
+            padding: 20px;
+            text-align: left;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-left {
+            flex: 1;
+        }
+
+        .footer-left h2 {
+            margin: 0;
+            font-family: 'Italianno', cursive;
+            font-size: 32px;
+        }
+
+        .footer-left p {
+            margin: 5px 0;
+            font-size: 16px;
+        }
+
+        .footer-right {
+            flex: 1;
+            text-align: right;
+        }
+
+        .footer-right h3 {
+            margin: 0;
+            font-size: 20px;
+        }
+
+        .footer-right p {
+            margin: 5px 0;
+            font-size: 16px;
+        }
+
+        .social-media {
+            margin-top: 10px;
+        }
+
+        .social-media a {
+            margin-left: 10px;
+        }
+
+        .social-media img {
+            width: 24px;
+            height: 24px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+    <h1>Athena Florist</h1>
+    <nav>
+        <ul>
+            <li><a href="index.php">Beranda</a></li>
+            <li><a href="produk.html">Produk</a></li>
+            <li><a href="custom_order.html">Pemesanan</a></li>
+            <li><a href="tentangkami.html">Tentang Kami</a></li>
+            <li><a href="kontak.html">Kontak</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Produk Section -->
+<section class="product-section">
+    <h2>Daftar Produk Kami</h2>
+
+    <!-- Kategori Bunga -->
+    <h3>Fresh Flowers</h3>
+    <div class="product-grid">
+        <!-- Produk Fresh Flowers -->
+        <div class="product-card">
+            <img src="gambar/mawar.jpeg" alt="Mawar">
+            <h3>Bunga Mawar</h3>
+            <p>Keindahan mawar merah yang mempesona untuk menyampaikan cinta Anda.</p>
+            <p class="price">Rp. 80.000</p>
+            <p class="details">Mawar merah segar, tersedia dalam berbagai ukuran.</p>
+        </div>
+        <div class="product-card">
+            <img src="gambar/tulip.jpeg" alt="Tulip">
+            <h3>Bunga Tulip</h3>
+            <p>Tulip segar dengan warna-warna yang memikat hati.</p>
+            <p class="price">Rp. 80.000</p>
+            <p class="details">Tulip premium, ideal untuk hadiah istimewa.</p>
+        </div>
+        <div class="product-card">
+            <img src="gambar/lily.jpeg" alt="Lily">
+            <h3>Bunga Lily</h3>
+            <p>Pesona elegan bunga lily putih yang menenangkan.</p>
+            <p class="price">Rp. 70.000</p>
+            <p class="details">Lily putih segar, simbol kemurnian dan keindahan.</p>
+        </div>
+        <div class="product-card">
+            <img src="gambar/matahari.jpeg" alt="Matahari">
+            <h3>Bunga Matahari</h3>
+            <p>Bunga matahari cerah yang membawa kebahagiaan.</p>
+            <p class="price">Rp. 55.000</p>
+            <p class="details">Matahari segar, sempurna untuk menghiasi ruangan.</p>
+        </div>
+        <div class="product-card">
+            <img src="gambar/anggrek.jpeg" alt="Anggrek">
+            <h3>Bunga Anggrek</h3>
+            <p>Anggrek indah yang menjadi simbol keanggunan.</p>
+            <p class="price">Rp. 50.000</p>
+            <p class="details">Anggrek segar, cocok untuk acara formal.</p>
+        </div>
+        <div class="product-card">
+            <img src="gambar/krisan.jpeg" alt="Krisan">
+            <h3>Bunga Krisan</h3>
+            <p>Krisan yang ceria dan penuh warna untuk suasana cerah.</p>
+            <p class="price">Rp. 60.000</p>
+            <p class="details">Krisan segar, cocok untuk menghiasi taman.</p>
+        </div>
+        <div class="product-card">
+            <img src="gambar/dahlia.jpeg" alt="Dahlia">
+            <h3>Anyelir</h3>
+            <p>Keindahan Dahlia yang tahan lama dan berwarna-warni.</p>
+            <p class="price">Rp. 70.000</p>
+            <p class="details">Anyelir segar, ideal untuk rangkaian bunga.</p>
+        </div>
+        <div class="product-card">
+            <img src="gambar/Gerebera.jpeg" alt="Gerbera">
+            <h3>Bunga Gerbera</h3>
+            <p>Bunga Gerbera cerah yang membawa keceriaan.</p>
+            <p class="price">Rp. 65.000</p>
+            <p class="details">Gerbera segar, pilihan sempurna untuk perayaan.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Produk Section -->
+<section class="product-section">
+    <!-- Kategori Bunga -->
+    <h3>Flowers Board</h3>
+    <div class="product-grid">
+        <!-- Produk Standing Flowers -->
+        <div class="product-card">
+            <img src="gambar/Wedding Stand.jpeg" alt="Wedding Stand">
+            <h3>Standing Flowers</h3>
+            <p>Sambut hari istimewa anda dengan keindahan bunga segar!.</p>
+            <p class="price">Rp. 400.000</p>
+            <p class="details">Standing Flower, tersedia dalam berbagai bentuk.</p>
+        </div>
+        <div class="product-card">
+            <img src="gambar/congrats.jpeg" alt="Congratulations">
+            <h3>Congratulations</h3>
+            <p>Ucapkan selamat dengan cara yang istimewa!.</p>
+            <p class="price">Rp. 200.000</p>
+            <p class="details">Karangan bunga ucapan selamat, pesan sesuai seleramu.</p>
+        </div>
+        <div class="product-card">
+            <img src="gambar/sympathy.jpeg" alt="Symphaty">
+            <h3>Sympathy</h3>
+            <p>Sampaikan rasa simpati anda dengan karangan bunga berduka cita yang penuh makna.</p>
+            <p class="price">Rp. 300.000</p>
+            <p class="details">Karangan bunga duka cita, untuk berbela sungkawa.</p>
+        </div>
+        <div class="product-card">
+            <img src="gambar/wedding.jpeg" alt="Wedding">
+            <h3>Wedding</h3>
+            <p>Rencanakan pernikahan impian anda di wedding stand kami.</p>
+            <p class="price">Rp. 200.000</p>
+            <p class="details">Wedding stand, sempurna untuk menghiasi pernikahanmu.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-container">
+        <div class="footer-left">
+            <h2>Athena Florist</h2>
+            <p>Alamat: Jl. Bunga No. 123, Jakarta, Indonesia</p>
+        </div>
+        <div class="footer-right">
+            <h3>Kontak Kami</h3>
+            <p>Email: info@athenaflorist.com</p>
+            <p>Telepon: +62 812-3456-7890</p>
+            <div class="social-media">
+                <a href="#" aria-label="Facebook"><img src="gambar/facebook logo.jpg" alt="Facebook" /></a>
+                <a href="#" aria-label="Instagram"><img src="gambar/instagram logo.png" alt="Instagram" /></a>
+                <a href="#" aria-label="Twitter"><img src="gambar/twitter logo.png" alt="Twitter" /></a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
