@@ -167,6 +167,8 @@
             height: 24px;
         }
     </style>
+    <!-- Link ke SweetAlert2 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 </head>
 <body>
 
@@ -190,7 +192,7 @@
     <p>Silakan isi formulir di bawah ini untuk melakukan pemesanan khusus.</p>
 
     <!-- Formulir Pemesanan -->
-    <form action="submit.php" method="post" class="order-form" id="customOrderForm">
+    <form class="order-form" id="customOrderForm">
         <label for="name">Nama Anda:</label>
         <input type="text" id="name" name="username" required>
 
@@ -211,7 +213,6 @@
         <label for="message">Pesan Tambahan:</label>
         <textarea id="message" name="pesan" rows="4" placeholder="Tuliskan pesan tambahan jika ada..."></textarea>
 
-        <!-- Penanda: Tombol Submit akan mengirim data ke submit.php -->
         <button type="submit" name="register">Kirim Pemesanan</button>
     </form>
 
@@ -242,6 +243,7 @@
 </footer>
 
 <!-- JavaScript untuk validasi dan pengiriman formulir -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
     document.getElementById('customOrderForm').addEventListener('submit', function(event) {
         event.preventDefault(); // Mencegah pengiriman formulir secara langsung
@@ -253,11 +255,22 @@
 
         // Validasi sederhana (misalnya email harus valid dan nama tidak kosong)
         if (name !== "" && email !== "" && phone !== "") {
-            // Menampilkan feedback jika berhasil
-            document.getElementById('feedbackMessage').style.display = 'block';
-            this.submit(); // Kirim formulir setelah validasi
+            // Menampilkan konfirmasi menggunakan SweetAlert2
+            Swal.fire({
+                title: 'Pemesan Berhasil!',
+                text: 'Terima kasih! Pemesanan khusus Anda telah berhasil dikirim.',
+                icon: 'success',
+                confirmButtonText: 'OK'
+            }).then(() => {
+                this.submit(); // Kirim formulir setelah konfirmasi
+            });
         } else {
-            alert("Silakan lengkapi semua kolom!");
+            Swal.fire({
+                title: 'Peringatan',
+                text: 'Silakan lengkapi semua kolom!',
+                icon: 'warning',
+                confirmButtonText: 'OK'
+            });
         }
     });
 </script>
