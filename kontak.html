@@ -8,6 +8,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Italianno&family=Love+Ya+Like+A+Sister&display=swap" rel="stylesheet">
+    
+    <!-- SweetAlert2 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <style>
         /* Gaya Umum */
@@ -254,23 +258,31 @@
         var email = document.getElementById('email').value;
         var message = document.getElementById('message').value;
 
-        // Simulasi pengiriman data ke toko florist
-        console.log('Mengirim pesan...');
-        console.log('Nama:', name);
-        console.log('Email:', email);
-        console.log('Pesan:', message);
+        // SweetAlert2 untuk konfirmasi pengiriman formulir
+        Swal.fire({
+            title: "Apakah Anda ingin mengirim pesan?",
+            showDenyButton: true,
+            showCancelButton: true,
+            confirmButtonText: "Kirim",
+            denyButtonText: "Jangan Kirim"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Jika pengguna mengonfirmasi pengiriman
+                console.log('Mengirim pesan...');
+                console.log('Nama:', name);
+                console.log('Email:', email);
+                console.log('Pesan:', message);
 
-        // Menampilkan feedback kepada pengguna
-        var feedback = document.getElementById('feedbackMessage');
-        feedback.style.display = 'block';
+                // Menampilkan pesan berhasil
+                Swal.fire("Pesan Terkirim!", "", "success");
 
-        // Mengosongkan formulir setelah pengiriman
-        document.getElementById('contactForm').reset();
-
-        // Menyembunyikan pesan feedback setelah 10 detik
-        setTimeout(function() {
-            feedback.style.display = 'none';
-        }, 10000); // 10000 milidetik = 10 detik
+                // Mengosongkan formulir setelah pengiriman
+                document.getElementById('contactForm').reset();
+            } else if (result.isDenied) {
+                // Jika pengguna tidak mengonfirmasi
+                Swal.fire("Pesan tidak dikirim", "", "info");
+            }
+        });
     });
 
     // Menyembunyikan pesan feedback saat halaman di-refresh
